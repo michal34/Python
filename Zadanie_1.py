@@ -1,13 +1,15 @@
-kwota = int(input())
+kwota = float(input())
 nominaly = input().split(',')
 
 reszta = []
 
-for i in reversed(nominaly):
-    i = float(i)
-    if i <= kwota:
-        kwota -= i
-        reszta.append(i)
+while kwota != 0:
+    kwota = round(kwota, 2)
+    for i in reversed(nominaly):
+        i = float(i)
+        if i <= kwota:
+            kwota -= i
+            reszta.append(i)
+            break
      
-odpowiedz = (len(reszta), reszta)
-print(odpowiedz)
+print((len(reszta), reszta))
